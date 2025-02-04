@@ -1,0 +1,551 @@
+* {
+    box-sizing: border-box; 
+}
+
+/* font implementation */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+
+
+
+/* colors & variables */
+html {
+    --background-color: #F9FFF3;    /* mint green */
+    --figure-color: #D9F4C2;        /* matcha green */
+    --header-footer-color: #FFDAFE; /* bubblegum pink */
+    --star-fill-color: #FFCB5C;     /* nacho yellow */
+    --star-stroke-color: #C27400;   /* burnt orange */
+    --text-color: #0D000D;          /* berry black */
+    --button-text-color: #FFFFFF;   /* sugary white */
+    --link-color: #8D318B;          /* grape purple */
+
+    --menu-icon-color: var(--text-color);
+    --nav-background-color: var(--background-color);
+    --nav-a-hover-bg-color: var(--link-color);
+  
+    --nav-height: 75px;
+
+    --rhythm: 1.5rem;
+    --double-rhythm: 3rem;            
+}
+
+body {
+    font-family: 'Poppins', Helvetica, sans-serif;
+    font-size: 1rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0 auto;
+    padding: 0 5px;
+    margin-top: calc(var(--nav-height)*1.25);
+}
+
+.footer{
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px);
+    background-color: var(--header-footer-color); 
+    color: var(--text-color);
+    padding: var(--rhythm) 90px;
+    margin-top: var(--rhythm);
+}
+
+figure{
+    background-color: var(--figure-color);
+    color: var(--text-color);
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    padding: var(--rhythm) 5px;
+    margin-bottom: var(--double-rhythm);
+}
+
+figure.small {
+    width: 15rem; 
+    height: auto; 
+    padding: 1rem; 
+    margin: var(--rhythm) auto;
+    padding-bottom: 0.10rem; 
+    text-align: center; 
+}
+
+figure.small h2, figure.small p {
+    margin: 0; 
+    line-height: 1.2; 
+}
+
+.button{
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--text-color); 
+    color: var(--button-text-color);
+    padding: 0.25rem 2rem;
+    width: fit-content;
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+}
+
+input{
+  border: none;
+  background-color: var(--figure-color);
+}
+
+input:focus {
+  outline: 2px solid var(--header-footer-color); 
+  outline-offset: 2px;  
+}
+
+
+
+
+/* header styling */
+header {
+  background: var(--header-footer-color);
+  height: var(--nav-height);
+  width: 100%;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 1rem; 
+  box-sizing: border-box;
+
+     
+
+  .logo {
+      margin: 0; 
+      font-size: 1.5rem; 
+      font-weight: bold;
+  }
+  
+  .logo a {
+      color: var(--text-color);
+      text-decoration: none; 
+  }
+  
+    label {
+      cursor: pointer;
+      height: 20px;
+      position: absolute;
+      right: 1rem;
+      width: 26px;
+      z-index: 1001;
+  
+      span {
+        background-color: var(--menu-icon-color);
+        border-radius: 2px;
+        display: block;
+        height: 3px;
+        position: absolute;
+        width: 100%;
+  
+        transform-origin: left;
+  
+        &:nth-child(1) {
+          top: 0;
+        }
+  
+        &:nth-child(2) {
+          top: 8px;
+        }
+  
+        &:nth-child(3) {
+          top: 16px;
+        }
+      }
+    }
+  }
+  
+  nav {
+    background: var(--nav-background-color);
+    height: 100vh;
+    margin-block-start: var(--nav-height);
+    width: 300px;
+  
+    position: fixed;
+    right: -300px;
+    top: 0;
+    z-index: 1000;
+  
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  
+      li {
+        padding: 0;
+  
+        a {
+          color: var(--text-color);
+          display: block;
+          font-size: 1.25rem;
+          padding-block: 1rem;
+          padding-inline: 1rem;
+          text-decoration: none;
+  
+          &:hover {
+            background-color: var(--background-color);
+            color: var(--link-color);
+          }
+        }
+      }
+    }
+  }
+ 
+  nav ul li {
+    border-bottom: 1px solid black;
+  }
+  
+
+
+
+.nav-toggle:checked ~ nav {
+    right: 0;
+  }
+  
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    transform: rotate(45deg);
+    top: -2px; 
+  }
+  
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  
+
+
+
+
+
+/* font styling */
+h1{
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-block-start: var(--rhythm);
+    margin-block-end: var(--rhythm);
+    padding: 0 var(--rhythm);
+    text-align: center;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: var(--rhythm);
+}
+
+h3{
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: var(--rhythm);
+}
+
+h4{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: var(--rhythm);
+}
+
+.button{
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 2; 
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+p, li{
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin: 0 20px;
+    margin-bottom: var(--double-rhythm);
+}
+
+li{
+    margin-bottom: 0px;
+}
+
+.center{
+    text-align: center;
+}
+
+figure h1, figure h2, figure h3, figure h4{
+    text-align: center;
+}
+
+figure p{
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/* shape styling */
+figure{
+    border-radius: 50px;
+}
+
+figure img{
+    display: block;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+img{
+    border-radius: 4px;
+}
+
+.circle{
+    border-radius: 1000px;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--rhythm);
+}
+
+.shadow{
+        box-shadow: 0 0 30px 20px var(--figure-color); 
+}
+
+
+
+
+
+/* form styling */
+.form {
+  margin: 0 auto;
+  max-width: 720px;
+  justify-content: center;
+} 
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+input {
+  width: 100%; 
+  padding: 1rem;
+}
+
+.formfield {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 2rem; 
+}
+
+
+
+
+
+/* reordering elements - IDM 222 */
+/* index.html */
+@media screen and (min-width: 768px) {
+  /* intro section */
+  .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* two columns: one for image, one for text */
+      grid-template-rows: auto auto; /* rows adjust to content */
+      gap: 2rem; /* space between elements */
+      align-items: center;  /* vertically align content */
+  }
+
+  .intro img {
+      grid-column: 1; 
+      grid-row: 1 / span 2; /* image spans both rows */
+  }
+
+  .introtitle {
+      grid-column: 2; 
+      grid-row: 1; 
+  }
+
+  .introtext {
+      grid-column: 2; 
+      grid-row: 2; 
+  }
+
+  /* my journey section */
+  .myjourney {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto; 
+    gap: 2rem; 
+    align-items: center;  
+  }
+
+  .myjourney img {
+    grid-column: 2; 
+    grid-row: 1 / span 2; 
+  }
+
+  .myjourney h3 {
+    grid-column: 1; 
+    grid-row: 1; 
+  }
+
+  .myjourney p {
+    grid-column: 1; 
+    grid-row: 2; 
+  }
+
+}
+
+/* favorites section -> wrap */
+.favorites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .title-alignment h3{
+    text-align: left;
+    margin-left: 2rem;
+  }
+}
+
+.homepage-figures {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0rem;
+  flex-wrap: nowrap;
+}
+
+figure.condensed{
+  min-width: 290px;
+  max-width: 290px;
+}
+
+/* savory.html, sweet.html, sips.html */
+@media screen and (min-width: 768px) {
+  .category-intro-paragraph {
+    max-width: 750px;
+    justify-self: center;
+  }
+
+  /* figures with images on the left */
+  .image-left-figure {
+    max-width: 992px;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two columns: one for image, one for text */
+    grid-template-rows: auto auto; /* rows adjust to content */
+    align-items: center;  /* vertically align content */
+}
+
+.image-left-figure-img {
+    grid-column: 1; 
+    grid-row: 1 / span 2; /* image spans both rows */
+}
+
+.image-left-figure-content {
+    grid-column: 2; 
+    grid-row: 1; 
+}
+
+.image-left-figure-button {
+    grid-column: 2; 
+    grid-row: 2; 
+}
+
+
+/* figures with images on the right */
+.image-right-figure {
+  max-width: 992px;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two columns: one for text, one for image */
+  grid-template-rows: auto auto; /* rows adjust to content */
+  align-items: center;  /* vertically align content */
+}
+
+.image-right-figure-img {
+  grid-column: 2; 
+  grid-row: 1 / span 2; 
+}
+
+.image-right-figure-content {
+  grid-column: 1; 
+  grid-row: 1; 
+}
+
+.image-right-figure-button {
+  grid-column: 1; 
+  grid-row: 2; 
+}
+}
+
+/* sub pages */
+@media screen and (min-width: 768px) {
+  .restaurant-review-figure {
+    max-width: 992px;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two columns: one for image, one for text */
+    grid-template-rows: auto auto; /* rows adjust to content */
+    align-items: center;  /* vertically align content */
+  }
+
+  .restaurant-review-figure-img {
+    grid-column: 1; 
+    grid-row: 1 / span 2; /* image spans both rows */
+}
+
+.restaurant-review-figure-title {
+    grid-column: 2; 
+    grid-row: 1; 
+}
+
+.restaurant-review-figure-content {
+    grid-column: 2; 
+    grid-row: 2; 
+}
+}
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send a Suggestion - Mihika's Menu</title>
+
+    <!--linking css stylesheets-->
+    <link rel="stylesheet" href = "css/normalize.css">
+    <link rel="stylesheet" href = "css/screen.css">
+
+</head>
+<body>
+
+    <!--menu-->
+    <header>
+        <h2 class="logo"><a href="index.html">Mihika's Menu</a></h2>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home 👋</a></li>
+                <li><a href="savory.html">Savory 🌶️</a></li>
+                <li><a href="sweet.html">Sweet 🍬</a></li>
+                <li><a href="sips.html">Sips 🍹</a></li>
+                <li><a href="send_a_suggestion.html">Send a Suggestion 💌</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!--intro-->
+    <section>
+
+        <h1>Send a Suggestion 💌</h1>
+
+        <div class="category-intro-paragraph">
+            <p>
+                I'm always eager to discover new places, and I'd love to hear your recommendations! If you know of any 
+                restaurants with good vegetarian options, feel free to share them using the contact form below. No matter if it's a 
+                popular spot or a local favorite, I'm excited to check out your suggestions!
+            </p>
+        </div>
+
+    </section>
+    
+     <!--contact form-->
+     <section>
+
+        <div class = "form">
+
+            <h2>Contact Form</h2>
+            
+            <div class="formfield">
+                <label for="first-name">First Name - Required</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+            
+            <div class="formfield">
+                <label for="last-name">Last Name - Required</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+            
+            <div class="formfield">
+                <label for="email">Email - Required</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="formfield">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="formfield">
+                <label for="restaurant-name">Restaurant Name - Required</label>
+                <input type="text" id="restaurant-name" name="restaurant-name" required>
+            </div>
+            
+            <div class="formfield">
+                <label for="location">Location - Required</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            
+            <div class="formfield">
+                <label for="favorite-dishes">Favorite Dishes - Required</label>
+                <input type="text" id="favorite-dishes" name="favorite-dishes" required>
+            </div>
+            
+            <div class="formfield">
+                <label for="rating-review">Your Rating/Review</label>
+                <img alt="fill in the stars" src="images/0stars.png" width="200">
+                <input type="text" id="rating-review" name="rating-review">
+            </div>
+
+        </div>
+
+        <a class="button">
+            send to mihika
+        </a>
+
+    </section>
+
+    <!--footer-->
+    <section class="footer">
+        <!--insert icons-->
+        <h3>© Mihika - Made with ❤️️️ in Philly, PA 📍</h3>
+    </section>
+
+</body>
+</html>
