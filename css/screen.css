@@ -86,10 +86,10 @@ figure{
 }
 
 figure.small {
-    width: 15rem; 
+    width: clamp(15rem, 20vw, 30rem);
     height: auto; 
     padding: 1rem; 
-    margin: var(--rhythm) auto;
+    margin: var(--rhythm) 20px;
     padding-bottom: 0.10rem; 
     text-align: center; 
 }
@@ -249,8 +249,53 @@ header {
   }
   
 
+/* show full menu on desktop */
+@media screen and (min-width: 1024px) {
+  /* make nav visible and horizontal */
+  nav {
+      position: static;
+      height: var(--nav-height);
+      width: auto;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      margin-block-start: 0;
+  }
 
+  nav ul {
+      display: flex;
+      gap: 0.15rem; 
+      padding: 0;
+  }
 
+  nav ul li {
+      border-bottom: none;
+  }
+
+  /* hide the home link when in horizontal navigation */
+  nav ul li:first-child {
+      display: none;
+  }
+
+  nav ul li a {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      color: var(--text-color);
+      transition: color 0.3s ease-in-out;
+  }
+
+  nav ul li a:hover {
+      background-color: var(--header-footer-color);
+      color: var(--link-color);
+  }
+
+  /* hide the hamburger menu */
+  .nav-toggle,
+  .nav-toggle-label {
+      display: none;
+  }
+}
 
 
 /* font styling */
@@ -439,7 +484,8 @@ input {
 .favorites {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
+  row-gap: min(0rem, 5vw);   /* Controls vertical spacing */
+  column-gap: max(1rem, 2vw); /* Controls horizontal spacing */
   justify-content: center;
 }
 
