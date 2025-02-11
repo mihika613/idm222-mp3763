@@ -63,7 +63,7 @@ body {
     color: var(--text-color);
     margin: 0 auto;
     padding: 0 5px;
-    margin-top: calc(var(--nav-height)*1.25);
+    margin-top: calc(var(--nav-height)*1.5);
 }
 
 .footer{
@@ -435,8 +435,9 @@ input {
       display: grid;
       grid-template-columns: 1fr 1fr; /* two columns: one for image, one for text */
       grid-template-rows: auto auto; /* rows adjust to content */
-      gap: 2rem; /* space between elements */
+      gap: 0.25rem; /* space between elements */
       align-items: center;  /* vertically align content */
+      margin: 0 1rem;
   }
 
   .intro img {
@@ -459,8 +460,9 @@ input {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     grid-template-rows: auto auto; 
-    gap: 2rem; 
+    gap: 1rem; 
     align-items: center;  
+    margin: 0 1rem;
   }
 
   .myjourney img {
@@ -489,19 +491,30 @@ input {
   justify-content: center;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .title-alignment h3{
     text-align: left;
-    margin-left: 2rem;
+    margin-left: 5rem;
   }
-}
+} */
 
 .homepage-figures {
-  margin-left: 2rem;
   display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
   flex-direction: row;
   gap: 0rem;
-  flex-wrap: nowrap;
+  /* flex-wrap: nowrap; */
+}
+
+.title-alignment {
+  padding-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .homepage-figures {
+    justify-content: space-evenly;
+  }
 }
 
 figure.condensed{
