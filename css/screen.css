@@ -554,6 +554,12 @@ figure.condensed{
     grid-row: 2; 
 }
 
+/* increase image size for screens 768px and larger */
+@media screen and (min-width: 768px) {
+  .image-left-figure-img img {
+      width: 350px; 
+  }
+}
 
 /* figures with images on the right */
 .image-right-figure {
@@ -578,6 +584,13 @@ figure.condensed{
 .image-right-figure-button {
   grid-column: 1; 
   grid-row: 2; 
+}
+
+/* increase image size for screens 768px and larger */
+@media screen and (min-width: 768px) {
+  .image-right-figure-img img {
+      width: 350px; 
+  }
 }
 }
 
@@ -605,6 +618,13 @@ figure.condensed{
 .restaurant-review-figure-content {
     grid-column: 2; 
     grid-row: 2; 
+}
+
+/* increase image size for screens 768px and larger */
+@media screen and (min-width: 768px) {
+  .restaurant-review-figure-img img {
+      width: 350px; 
+  }
 }
 }
 
