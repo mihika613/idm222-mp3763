@@ -229,7 +229,9 @@ header {
   }
   
 
-
+label span {
+  transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+}
 
 .nav-toggle:checked ~ nav {
     right: 0;
@@ -297,6 +299,12 @@ header {
   }
 }
 
+@media screen and (max-width: 1023px) {
+  nav ul li a:hover {
+      color: var(--link-color);
+      transition: color 0.3s ease-in-out;
+  }
+}
 
 /* font styling */
 h1{
@@ -321,7 +329,7 @@ h3{
     font-weight: 500;
     line-height: 1.4;
     text-align: center;
-    margin-bottom: var(--rhythm);
+    margin-bottom: 1rem;
 }
 
 h4{
@@ -339,6 +347,60 @@ h4{
     margin: 0 auto;
     border-radius: 5px;
 }
+
+.button {
+  transition: transform 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+/* back button styling*/
+.back-button {
+  position: fixed;
+  top: 7.75rem;
+  left: 1.25rem;
+  width: 26px;
+  height: 20px;
+  z-index: 1001;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.back-button span {
+  background-color: var(--menu-icon-color);
+  border-radius: 2px;
+  display: block;
+  height: 3px;
+  width: 70%;
+  transition: transform 0.3s ease;
+}
+
+/* Style to resemble the "<" icon */
+.back-button span:first-child {
+  transform: rotate(-45deg) translate(-2px, 2px);
+}
+
+.back-button span:last-child {
+  transform: rotate(45deg) translate(-2px, -2px);
+}
+
+.back-button:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 1200px) {
+  .back-button {
+    position: fixed;
+    top: 7.75rem;
+    left: 4rem;
+  }
+}
+
 
 p, li{
     font-size: 0.875rem;
@@ -398,8 +460,6 @@ img{
 
 
 
-
-
 /* form styling */
 .form {
   margin: 0 auto;
@@ -429,54 +489,54 @@ input {
 
 /* reordering elements - IDM 222 */
 /* index.html */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 920px) {
   /* intro section */
   .intro {
       display: grid;
-      grid-template-columns: 1fr 1fr; /* two columns: one for image, one for text */
-      grid-template-rows: auto auto; /* rows adjust to content */
-      gap: 0.25rem; /* space between elements */
+      grid-template-columns: 0.20fr 1fr 1fr 0.20fr; /* four columns: one for margin, one for image, one for text, and another for margin to center the content more */
+      grid-template-rows: auto auto auto auto; /* rows adjust to content */
+      gap: 1rem; /* space between elements */
       align-items: center;  /* vertically align content */
       margin: 0 1rem;
   }
 
   .intro img {
-      grid-column: 1; 
+      grid-column: 2; 
       grid-row: 1 / span 2; /* image spans both rows */
   }
 
   .introtitle {
-      grid-column: 2; 
+      grid-column: 3; 
       grid-row: 1; 
   }
 
   .introtext {
-      grid-column: 2; 
+      grid-column: 3; 
       grid-row: 2; 
   }
 
   /* my journey section */
   .myjourney {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: auto auto; 
+    grid-template-columns: 0.20fr 1fr 1fr 0.20fr; 
+    grid-template-rows: auto auto auto auto; 
     gap: 1rem; 
     align-items: center;  
     margin: 0 1rem;
   }
 
   .myjourney img {
-    grid-column: 2; 
+    grid-column: 3; 
     grid-row: 1 / span 2; 
   }
 
   .myjourney h3 {
-    grid-column: 1; 
+    grid-column: 2; 
     grid-row: 1; 
   }
 
   .myjourney p {
-    grid-column: 1; 
+    grid-column: 2; 
     grid-row: 2; 
   }
 
@@ -489,6 +549,7 @@ input {
   row-gap: min(0rem, 5vw);   /* Controls vertical spacing */
   column-gap: max(1rem, 2vw); /* Controls horizontal spacing */
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 /* @media screen and (min-width: 768px) {
@@ -627,4 +688,6 @@ figure.condensed{
   }
 }
 }
+
+
 
