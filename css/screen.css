@@ -56,6 +56,19 @@ html {
     --double-rhythm: 3rem;            
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+      --background-color: #1F3A03;    /* seaweed green */
+      --figure-color: #578530;        /* jalapeño green */
+      --header-footer-color: #FF579F; /* dragonfruit pink */
+      --star-fill-color: #FFCB5C;     /* nacho yellow */
+      --star-stroke-color: #C27400;   /* burnt orange */
+      --text-color: #FFFFFF;          /* sugary white */
+      --button-text-color: #0D000D;   /* berry black */
+      --link-color: #D7F75B;          /* lime green */
+  }
+}
+
 body {
     font-family: 'Poppins', Helvetica, sans-serif;
     font-size: 1rem;
