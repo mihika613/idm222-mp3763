@@ -69,6 +69,7 @@ html {
   }
 }
 
+/* basic styling */
 body {
     font-family: 'Poppins', Helvetica, sans-serif;
     font-size: 1rem;
@@ -393,7 +394,7 @@ h4{
   transition: transform 0.3s ease;
 }
 
-/* Style to resemble the "<" icon */
+/* style to resemble the "<" icon */
 .back-button span:first-child {
   transform: rotate(-45deg) translate(-2px, 2px);
 }
@@ -559,18 +560,11 @@ input {
 .favorites {
   display: flex;
   flex-wrap: wrap;
-  row-gap: min(0rem, 5vw);   /* Controls vertical spacing */
-  column-gap: max(1rem, 2vw); /* Controls horizontal spacing */
+  row-gap: min(0rem, 5vw);   /* controls vertical spacing */
+  column-gap: max(1rem, 2vw); /* controls horizontal spacing */
   justify-content: center;
   margin-bottom: 2rem;
 }
-
-/* @media screen and (min-width: 768px) {
-  .title-alignment h3{
-    text-align: left;
-    margin-left: 5rem;
-  }
-} */
 
 .homepage-figures {
   display: flex;
